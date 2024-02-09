@@ -64,6 +64,11 @@ h6 {
     height: 100px;
     background-color: #d85849;
     margin-top: 50px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    color: #fff;
+    padding-left: 4%;
 }
 
 .nav_links {

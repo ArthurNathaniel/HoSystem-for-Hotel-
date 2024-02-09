@@ -7,7 +7,7 @@
     <?php include './include/cdn.php' ?>
     <title>Hotel Management System - Stats</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/chart.css">
 </head>
 
 <body>
@@ -79,92 +79,94 @@
     ?>
 
     <?php include 'sidebar.php' ?>
- 
 
-    <div class="container">
-        <!-- Booked Rooms Today -->
-        <div class="card">
-            <h2>Booked Rooms Today</h2>
-            <p>Number of rooms booked for today:</p>
-            <p class="highlight"><?php echo $bookedRoomsToday; ?></p>
-            <div class="chart-container">
-                <canvas id="bookedRoomsTodayChart"></canvas>
+
+    <div class="chart_all">
+        <div class="container">
+            <!-- Booked Rooms Today -->
+            <div class="card">
+                <h2>Booked Rooms Today</h2>
+                <p>Number of rooms booked for today:</p>
+                <p class="highlight"><?php echo $bookedRoomsToday; ?></p>
+                <div class="chart-container">
+                    <canvas id="bookedRoomsTodayChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Available Rooms Today -->
+            <div class="card">
+                <h2>Available Rooms Today</h2>
+                <p>Number of rooms available for today:</p>
+                <p class="highlight"><?php echo $availableRoomsToday; ?></p>
+                <div class="chart-container">
+                    <canvas id="availableRoomsTodayChart"></canvas>
+                </div>
             </div>
         </div>
 
-        <!-- Available Rooms Today -->
-        <div class="card">
-            <h2>Available Rooms Today</h2>
-            <p>Number of rooms available for today:</p>
-            <p class="highlight"><?php echo $availableRoomsToday; ?></p>
-            <div class="chart-container">
-                <canvas id="availableRoomsTodayChart"></canvas>
+        <div class="container">
+            <!-- Booked Rooms This Week -->
+            <div class="card">
+                <h2>Booked Rooms This Week</h2>
+                <p>Number of rooms booked for this week:</p>
+                <p class="highlight"><?php echo $bookedRoomsWeek; ?></p>
+                <div class="chart-container">
+                    <canvas id="bookedRoomsWeekChart"></canvas>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <!-- Booked Rooms This Week -->
-        <div class="card">
-            <h2>Booked Rooms This Week</h2>
-            <p>Number of rooms booked for this week:</p>
-            <p class="highlight"><?php echo $bookedRoomsWeek; ?></p>
-            <div class="chart-container">
-                <canvas id="bookedRoomsWeekChart"></canvas>
-            </div>
-        </div>
-
-        <!-- Available Rooms This Week -->
-        <div class="card">
-            <h2>Available Rooms This Week</h2>
-            <p>Number of rooms available for this week:</p>
-            <p class="highlight"><?php echo $availableRoomsWeek; ?></p>
-            <div class="chart-container">
-                <canvas id="availableRoomsWeekChart"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Booked Rooms This Month -->
-        <div class="card">
-            <h2>Booked Rooms This Month</h2>
-            <p>Number of rooms booked for this month:</p>
-            <p class="highlight"><?php echo $bookedRoomsMonth; ?></p>
-            <div class="chart-container">
-                <canvas id="bookedRoomsMonthChart"></canvas>
+            <!-- Available Rooms This Week -->
+            <div class="card">
+                <h2>Available Rooms This Week</h2>
+                <p>Number of rooms available for this week:</p>
+                <p class="highlight"><?php echo $availableRoomsWeek; ?></p>
+                <div class="chart-container">
+                    <canvas id="availableRoomsWeekChart"></canvas>
+                </div>
             </div>
         </div>
 
-        <!-- Available Rooms This Month -->
-        <div class="card">
-            <h2>Available Rooms This Month</h2>
-            <p>Number of rooms available for this month:</p>
-            <p class="highlight"><?php echo $availableRoomsMonth; ?></p>
-            <div class="chart-container">
-                <canvas id="availableRoomsMonthChart"></canvas>
+        <div class="container">
+            <!-- Booked Rooms This Month -->
+            <div class="card">
+                <h2>Booked Rooms This Month</h2>
+                <p>Number of rooms booked for this month:</p>
+                <p class="highlight"><?php echo $bookedRoomsMonth; ?></p>
+                <div class="chart-container">
+                    <canvas id="bookedRoomsMonthChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Available Rooms This Month -->
+            <div class="card">
+                <h2>Available Rooms This Month</h2>
+                <p>Number of rooms available for this month:</p>
+                <p class="highlight"><?php echo $availableRoomsMonth; ?></p>
+                <div class="chart-container">
+                    <canvas id="availableRoomsMonthChart"></canvas>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <!-- Booked Rooms This Year -->
-        <div class="card">
-            <h2>Booked Rooms This Year</h2>
-            <p>Number of rooms booked for this year:</p>
-            <p class="highlight"><?php echo $bookedRoomsYear; ?></p>
-            <div class="chart-container">
-                <canvas id="bookedRoomsYearChart"></canvas>
+        <div class="container">
+            <!-- Booked Rooms This Year -->
+            <div class="card">
+                <h2>Booked Rooms This Year</h2>
+                <p>Number of rooms booked for this year:</p>
+                <p class="highlight"><?php echo $bookedRoomsYear; ?></p>
+                <div class="chart-container">
+                    <canvas id="bookedRoomsYearChart"></canvas>
+                </div>
             </div>
-        </div>
 
-        <!-- Available Rooms This Year -->
-        <div class="card">
-            <h2>Available Rooms This Year</h2>
-            <p>Number of rooms available for this year:</p>
-            <p class="highlight"><?php echo $availableRoomsYear; ?></p>
-            <div class="chart-container">
-                <canvas id="availableRoomsYearChart"></canvas>
+            <!-- Available Rooms This Year -->
+            <div class="card">
+                <h2>Available Rooms This Year</h2>
+                <p>Number of rooms available for this year:</p>
+                <p class="highlight"><?php echo $availableRoomsYear; ?></p>
+                <div class="chart-container">
+                    <canvas id="availableRoomsYearChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -174,14 +176,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Booked Rooms Today Chart
             var bookedRoomsTodayChart = new Chart(document.getElementById('bookedRoomsTodayChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Booked Rooms Today'],
                     datasets: [{
                         label: 'Booked Rooms Today',
                         data: [<?php echo $bookedRoomsToday; ?>],
-                        backgroundColor: '#e44d26',
-                        borderColor: '#e44d26',
+                        backgroundColor: '#6158e5',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -196,14 +198,14 @@
 
             // Available Rooms Today Chart
             var availableRoomsTodayChart = new Chart(document.getElementById('availableRoomsTodayChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Available Rooms Today'],
                     datasets: [{
                         label: 'Available Rooms Today',
                         data: [<?php echo $availableRoomsToday; ?>],
-                        backgroundColor: '#4CAF50',
-                        borderColor: '#4CAF50',
+                        backgroundColor: '#ff4961',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -218,14 +220,14 @@
 
             // Booked Rooms This Week Chart
             var bookedRoomsWeekChart = new Chart(document.getElementById('bookedRoomsWeekChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Booked Rooms This Week'],
                     datasets: [{
                         label: 'Booked Rooms This Week',
                         data: [<?php echo $bookedRoomsWeek; ?>],
-                        backgroundColor: '#e44d26',
-                        borderColor: '#e44d26',
+                        backgroundColor: '#6158e5',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -240,14 +242,14 @@
 
             // Available Rooms This Week Chart
             var availableRoomsWeekChart = new Chart(document.getElementById('availableRoomsWeekChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Available Rooms This Week'],
                     datasets: [{
                         label: 'Available Rooms This Week',
                         data: [<?php echo $availableRoomsWeek; ?>],
-                        backgroundColor: '#4CAF50',
-                        borderColor: '#4CAF50',
+                        backgroundColor: '#ff4961',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -262,14 +264,14 @@
 
             // Booked Rooms This Month Chart
             var bookedRoomsMonthChart = new Chart(document.getElementById('bookedRoomsMonthChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Booked Rooms This Month'],
                     datasets: [{
                         label: 'Booked Rooms This Month',
                         data: [<?php echo $bookedRoomsMonth; ?>],
-                        backgroundColor: '#e44d26',
-                        borderColor: '#e44d26',
+                        backgroundColor: '#6158e5',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -284,14 +286,14 @@
 
             // Available Rooms This Month Chart
             var availableRoomsMonthChart = new Chart(document.getElementById('availableRoomsMonthChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Available Rooms This Month'],
                     datasets: [{
                         label: 'Available Rooms This Month',
                         data: [<?php echo $availableRoomsMonth; ?>],
-                        backgroundColor: '#4CAF50',
-                        borderColor: '#4CAF50',
+                        backgroundColor: '#ff4961',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -306,14 +308,14 @@
 
             // Booked Rooms This Year Chart
             var bookedRoomsYearChart = new Chart(document.getElementById('bookedRoomsYearChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Booked Rooms This Year'],
                     datasets: [{
                         label: 'Booked Rooms This Year',
                         data: [<?php echo $bookedRoomsYear; ?>],
-                        backgroundColor: '#e44d26',
-                        borderColor: '#e44d26',
+                        backgroundColor: '#6158e5',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
@@ -328,14 +330,14 @@
 
             // Available Rooms This Year Chart
             var availableRoomsYearChart = new Chart(document.getElementById('availableRoomsYearChart'), {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: ['Available Rooms This Year'],
                     datasets: [{
                         label: 'Available Rooms This Year',
                         data: [<?php echo $availableRoomsYear; ?>],
-                        backgroundColor: '#4CAF50',
-                        borderColor: '#4CAF50',
+                        backgroundColor: '#ff4961',
+                        borderColor: '#fff',
                         borderWidth: 1
                     }]
                 },
