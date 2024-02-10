@@ -1,12 +1,12 @@
 <?php
 include('db.php');
-            session_start();
+session_start();
 
-            // Check if the user is not logged in, redirect to the login page
-            if (!isset($_SESSION['username'])) {
-                header("Location: login.php");
-                exit();
-            }
+// Check if the user is not logged in, redirect to the login page
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
 // Include logic to update booking status
 include('update_booking_status.php');
 
@@ -46,38 +46,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include './include/cdn.php' ?>
     <title>Hotel Management System - Book Room</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/signup.css">
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
-    <h1>Receptionist - Book Room</h1>
-    <form method="post" action="">
-        <label for="guest_name">Guest Name:</label>
-        <input type="text" name="guest_name" required><br>
+    <?php include 'sidebar.php'; ?>
+    <div class="booked_all">
+        <div class="title">
+            <h1>Receptionist - Book Room</h1>
+        </div>
+        <form method="post" action="">
+            <div class="forms">
+                <label for="guest_name">Guest Name:</label>
+                <input type="text" placeholder="Enter your guest name" name="guest_name" required>
+            </div>
+            <div class="forms">
+                <label for="phone_number">Phone Number:</label>
+                <input type="number" placeholder="Enter your phone number" name="phone_number" required>
+            </div>
+            <div class="forms">
+                <label for="checkin_date">Check-in Date:</label>
+                <input type="datetime-local" placeholder="Pick a date for check in" name="checkin_date" id="myDateTime" required>
+            </div>
+            <div class="forms">
+                <label for="checkout_date">Check-out Date:</label>
+                <input type="datetime-local" placeholder="Pick a date for check out" name="checkout_date" id="myDateTime" required><br>
 
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" name="phone_number" required><br>
+            </div>
+            <label for="room_id">Select Room:</label>
+            <div class="forms">
+                <select name="room_id" required>
+                    <?php
+                    $roomQuery = "SELECT id, room_number, room_type FROM rooms WHERE status = 'available'";
+                    $roomResult = $conn->query($roomQuery);
+                    while ($row = $roomResult->fetch_assoc()) {
+                        echo "<option value='{$row['id']}'>Room {$row['room_number']} ({$row['room_type']})</option>";
+                    }
+                    ?>
+                </select>
+            </div>
 
-        <label for="checkin_date">Check-in Date:</label>
-        <input type="datetime-local" name="checkin_date" required><br>
-
-        <label for="checkout_date">Check-out Date:</label>
-        <input type="datetime-local" name="checkout_date" required><br>
-
-        <label for="room_id">Select Room:</label>
-        <select name="room_id" required>
-            <?php
-            $roomQuery = "SELECT id, room_number, room_type FROM rooms WHERE status = 'available'";
-            $roomResult = $conn->query($roomQuery);
-            while ($row = $roomResult->fetch_assoc()) {
-                echo "<option value='{$row['id']}'>Room {$row['room_number']} ({$row['room_type']})</option>";
-            }
-            ?>
-        </select><br>
-
-        <button type="submit">Book Room</button>
-    </form>
+            <div class="forms">
+                <button type="submit">Book Room</button>
+            </div>
+        </form>
+    </div>
+    <script src="./js/navbar.js"></script>
 </body>
 
 </html>
+
+<style>
+    .booked_all {
+        margin-top: 70px;
+        padding: 0 15%;
+    }
+
+    .forms select {
+        height: 50px;
+        border: 2px solid #8f8989c7;
+        border-radius: 10px;
+        padding-left: 2%;
+    }
+
+    .title {
+        margin-bottom: 30px;
+    }
+</style>

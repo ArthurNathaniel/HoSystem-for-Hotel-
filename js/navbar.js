@@ -16,3 +16,7 @@ toggleButton.addEventListener("click", function () {
     icon.classList.add("fa-bars-staggered");
   }
 });
+flatpickr("#myDateTime", {
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+});
